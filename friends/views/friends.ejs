@@ -1,0 +1,24 @@
+<%- include ('templates/header'); -%>
+    
+<h1>My Friend List</h1>
+
+<!-- 
+	The GET method targets to the route "/friends"
+    The passing value is stored in the variable named 'friends' 
+-->
+<ul>
+<%friends.forEach(function(friend){%>
+    <li><%=friend%></li>
+<%});%>
+</ul>
+
+<!-- 
+	The POST method targets to the route "/addfriend"
+    The input value is stored in the variable named 'newfriend' 
+-->
+<form action='/addfriend' method='POST'>
+	<input type='text' name='newfriend' placeholder='New friend name'>
+	<button class='btn btn-success'>Add</button>
+</form>
+
+<%- include ('templates/footer'); -%>
